@@ -1,0 +1,1 @@
+# Reuniones con los miembros de la empresa del área de sistemas, con el objetivo de relevar los datos más impotrantes para la nueva base de datos. | Meetings with company staff, with the aim of collecting the most important data for the new database.
