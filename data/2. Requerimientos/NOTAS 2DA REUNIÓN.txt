@@ -1,0 +1,99 @@
+REVISION BASE DE DATOS PARA TABLAS.
+
+1. BASE DE DATOS PRODUCTOS. (BASE 1) LISTA
+
+a) Quizás se podrían remover columnas V, W, X, E. | X APROBADO
+b) Revisar significado columnas T, U. | X APROBADO
+	T SE TRANSFORMA A "Unidades". U es irrelevante.
+c) Establecer diferencia entre columnas M, N, O. 
+	Mejorar nombres de columnas | NO
+d) Stock 0: ¿Existen valores 0 en la realidad? | X APROBADO
+e) Si tiene costo 0 ¿Reemplazar por valor nulo? | X APROBADO
+f) Tipo de producto:
+	QD? | x APROBADO
+	Panif.?
+g) IVA VENTAS tiene un sólo valor. REMOVER | X APROBADO
+d) Es una base de datos manejable con reportes mensuales. ¿Cómo se actualizan los productos?
+
+2. BASE DE DATOS VENTAS (1 día) (BASE 2) LISTA
+
+a) Quitar filas superiores | X
+b) Columnas con datos aparentemente irrelevantes: | X
+	AB,AD,AE,AF,AH,AI,AJ,AK,AL,AM, AR
+c) Columnas sin datos: | X
+	AO,AP,AQ.
+d) Eliminar otras columnas irrelevantes para las agrupaciones| X
+a) Corregir redacción columna D. ("Grastronomía") | x
+
+e)Datos con tamaño no manejable. AGRUPACIONES POSIBLES. 
+	VENTAS POR PRODUCTO. 
+	VENTAS POR FECHA.
+	VENTAS POR VENDEDOR
+El modelo de relación va a permitir elaborar informes como ventas por tipo, por categoría de cliente, etc. 
+
+3. BASE DE DATOS COMPRAS (1 día)
+
+a)Columnas U, W, X, Y, Q, AA, AF, AI sin datos relevantes
+  Columna AH sin datos.
+b) Base de datos no manejable. DIVISION POSIBLE. Compras por cliente, Compras por producto = que Base de Datos 2.
+
+4. REPORTE GASTOS
+a) Lista para transformar en Tabla. Base de datos manejables con reportes mensuales (máx 400 filas)
+
+5. REPORTE INGRESOS.
+a) Una sola fila. Describir la categoría "Transferencias bancarias".
+
+6. MOVIMIENTOS DE STOCK | NO VA | APROBADO
+a) Datos con tamaño no manejable. DIVISION POSIBLE
+	Ventas por Cliente. Si se agrupan por ID se reducen a 28 filas (132 filas menos)
+	Ventas por Producto. Si se agrupan por código se reducen a 115 (52 filas menos)
+b) Analizar si ésta base no es repetitiva respecto de Base de Datos Venta y Compras (1 y 2).
+
+7. BASE OBJETIVOS
+a) Base ausente en el mail, pero estaba en el papel de notas de la reunión.
+
+8. BASE DE DATOS OPERACIONES (Banderas de seguimiento).
+a) Base con tamaño no manejable. SUGERENCIA: Mantener en AWS.
+b) CONSULTA. ¿Qué usuarios pueden "Editar"? ¿Cómo se refleja ésta edición en la base de datos? ¿Transforma los valores de la fila "Creó"? Si se desconoce, consultar asesores de Contagram.
+
+9. BASE DE DATOS CLIENTES
+1. BASE DE DATOS CLIENTES.
+a) Columna S, T, sin datos.
+b) Columna K normalizar datos ausentes (quitar 1111)
+c) Base de datos manejable con reportes mensuales, poca velocidad.
+d) Hay diferencias relevantes entre "creado", "fecha de creación"?
+e) Chequear localidades ausentes en Dirección
+2. MOVIMIENTOS DE CUENTAS CLIENTES.
+a) Columnas T, U, V, X, Y, Z, AA, AB, AC, AD sin datos relevantes.
+b) Consultar velocidad de Base de Datos. ¿Cada cuanto se emiten las facturas?
+
+10. BASE DE DATOS PROVEEDORES.
+1. BASE DE DATOS PROVEEDORES.
+a) Cambiar nombre "Suppliers" a "Proveedores".
+b) Definir si se utiliza sólo la columna "Nombre". Columna D "Apellido" sin datos relevantes.
+c) Priorizar columna F "Teléfono 1" por sobre columna G "Teléfono 2". Combinar.
+d) Columna K sin datos.
+e) Base de datos manejable con reportes mensuales, poca velocidad.
+2. MOVIMIENTOS DE CUENTAS PROVEEDORES.
+a) Columnas S, T, U, W, AB, AC, AD sin datos relevantes.
+b) Base de datos manejable con reportes mensuales (máximo 400 filas).
+
+11. BASE DE DATOS TESORERÍA. (CAJA GENERAL, MOVIMIENTOS).
+a) Columna D "Detalle" no describe correctamente la información de la columna.
+b) Columnas H, I, J sin información.
+c) Base de datos manejable con reportes mensuales (máx 600 filas)
+ 
+11. REPORTE VENTAS
+a)¿Qué información viene de Contagram? ¿Cómo la exportan?
+b)¿Qué problemas de funcionamiento tiene éste reporte?
+c)Revisar hoja por hoja.
+d)¿Qué representan las categorías A B Y C?
+b) Base de Productos ya está ingresada. Eliminar.
+
+12. EVALUACIÓN DESEMPEÑO
+a) ¿Es una evaluación en funcionamiento? ¿Cómo se cargan los datos?
+b) ¿Sería conveniente construir nuevos reportes a partir de los nuevos datos de stock, ventas, faltantes, sobrantes, productos. etc?
+c) Si funciona actualmente, ¿Sería útil optimizar su estructura para trabajar con nuevos datos pero sin abandonar el formato excel?
+
+
+
